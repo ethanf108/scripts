@@ -1,0 +1,8 @@
+# Ethan Ferguson Custom .inputrc
+
+set editing-mode emacs
+C-h: kill-whole-line
+C-/: undo
+M-w: copy-region-as-kill
+C-w: kill-region
+
