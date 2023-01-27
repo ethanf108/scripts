@@ -7,4 +7,4 @@ PWD=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 ( [[ ! -f ~/.bashrc ]] || ( ! grep -qs "$MARK_COMMENT" ~/.bashrc ) ) && echo ". $PWD/.bashrc $MARK_COMMENT" >> ~/.bashrc
 
-( [[ ! -f ~/.inputrc ]] || ( ! grep -qs "$MARK_COMMENT" ~/.inputrc ) ) && echo "\$include $PWD/.inputrc $MARK_COMMENT" >> ~/.inputrc
+( [[ ! -f ~/.inputrc ]] || ( ! grep -qs "$MARK_COMMENT" ~/.inputrc ) ) && echo -e "$MARK_COMMENT\n\$include $PWD/.inputrc" >> ~/.inputrc
