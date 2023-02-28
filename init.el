@@ -118,7 +118,16 @@
 
 ; useful packages
 
-(use-package transpose-frame) ; M-x transpose-frame RET to "transpose" the frame, in the same way you would transpose a matrix
+(use-package transpose-frame ; flip windows in a frame. Custom keybindings
+  :config (bind-keys :prefix-map transpose-frame-map
+		     :prefix "C-c C-t"
+		     ("t" . transpose-frame)
+		     ("p" . flip-frame) ; "p" for pitch, rotates over pitch (x) axis
+		     ("x" . flip-frame) ; also bind x for above
+		     ("y" . flop-frame) ; "y" for yaw / y, flips over yaw (y) axis
+		     ("r" . rotate-frame-clockwise) ; r for "right", rotates right
+		     ("l" . rotate-frame-anticlockwise) ; l for "left", rotates left
+		     ("f" . rotate-frame))) ; f for "flip", rotates 180 deg
 
 (use-package latex-preview-pane) ; to work on TeX documents with a live preview on the side
 
