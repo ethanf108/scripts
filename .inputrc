@@ -5,4 +5,8 @@ C-h: kill-whole-line
 C-/: undo
 M-w: copy-region-as-kill
 C-w: kill-region
-
+set active-region-start-color "\e[01;33m"
+set active-region-end-color "\e[0m"
+set mark-modified-lines on
+set colored-stats on
+set completion-query-items 20
