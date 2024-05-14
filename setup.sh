@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 MARK_COMMENT="Ethan Ferguson Custom Scripts"
 PWD=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
