@@ -12,8 +12,8 @@ HISTCONTROL=ignoreboth:erasedups
 gsc(){ git clone git@github.com:$1/$2; } # git SSH clone
 
 if [[ `id -u` = 0 ]]; then
-    PS1='\[\e[1;37m[\e[101;97m\u\e[0;37m@\e[1;95m\h \e[1;32m\W\e[1;37m]$\e[0m \]'
+    PS1='\[\e[1;37m\][\[\e[101;97m\]\u\[\e[0;37m\]@\[\e[1;95m\]\h \[\e[1;32m\]\W\[\e[1;37m\]]$\[\e[0m\] '
 else
-    PS1='\[\e[1;37m[\u\e[0;37m@\e[1;95m\h \e[1;32m\W\e[1;37m]$\e[0m \]'
+    PS1='\[\e[1;37m\][\u\[\e[0;37m\]@\[\e[1;95m\]\h \[\e[1;32m\]\W\[\e[1;37m\]]$\[\e[0m\] '
 fi
 
