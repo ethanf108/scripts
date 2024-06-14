@@ -9,6 +9,8 @@ PWD=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 ( [[ ! -f ~/.inputrc ]] || ( ! grep -qs "# $MARK_COMMENT" ~/.inputrc ) ) && echo -e "# $MARK_COMMENT\n\$include $PWD/.inputrc" >> ~/.inputrc
 
+( [[ ! -f ~/.tmux.conf ]] || ( ! grep -qs "# $MARK_COMMENT" ~/.tmux.conf ) ) && echo -e "source $PWD/.tmux.conf # $MARK_COMMENT" >> ~/.tmux.conf
+
 if [[ -f ~/.emacs ]]
 then
     mkdir -p ~/.emacs.d/
