@@ -11,11 +11,14 @@ PWD=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 ( [[ ! -f ~/.tmux.conf ]] || ( ! grep -qs "# $MARK_COMMENT" ~/.tmux.conf ) ) && echo -e "source $PWD/.tmux.conf # $MARK_COMMENT" >> ~/.tmux.conf
 
-if [[ -f ~/.emacs ]]
+if [[ ! -d ~/.emacs.d/ ]]
 then
     mkdir -p ~/.emacs.d/
-    cat ~/.emacs >> ~/.emacs.d/init.el
-    rm -f ~/.emacs
+    if [[ -f ~/.emacs ]]
+    then
+	cat ~/.emacs >> ~/.emacs.d/init.el
+	rm -f ~/.emacs
+    fi
 fi
 
 ( [[ ! -f ~/.emacs.d/init.el ]] || ( ! grep -qs "; $MARK_COMMENT" ~/.emacs.d/init.el ) ) && echo -e "(load \"$PWD/init.el\") ; $MARK_COMMENT" >> ~/.emacs.d/init.el
