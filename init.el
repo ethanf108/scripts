@@ -38,6 +38,7 @@
 (use-package emacs
   :init
   (blink-cursor-mode -1) ; turn off the blinking cursor
+  (menu-bar-mode -1) ; disable menu bar
   (line-number-mode t) ; line number
   (column-number-mode t) ; column number
   (size-indication-mode t) ; where in file
