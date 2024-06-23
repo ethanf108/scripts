@@ -17,3 +17,8 @@ else
     PS1='\[\e[1;37m\][\u\[\e[0;37m\]@\[\e[1;95m\]\h \[\e[1;32m\]\W\[\e[1;37m\]]$\[\e[0m\] '
 fi
 
+case "$TERM" in
+    "dumb")
+	PS1="[\u@\h \W]$ "
+	;;
+esac
