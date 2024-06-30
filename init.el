@@ -206,9 +206,11 @@
 (use-package latex-preview-pane) ; to work on TeX documents with a live preview on the side
 
 (use-package multiple-cursors ; multiple cursors at once
+  :bind ("C-S-c C-S-c" . mc/edit-lines)
+  :bind ("C->" . mc/mark-next-like-this)
+  :bind ("C-<" . mc/mark-previous-like-this)
   :config
-  (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-  ; honestly, don't know why this is here, looks redundant
+  ;; honestly, don't know why this is here, looks redundant
   (global-set-key (kbd "C-x O") (lambda ()
                                   (interactive)
                                   (other-window -1))))
