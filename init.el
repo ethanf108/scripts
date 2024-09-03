@@ -22,7 +22,11 @@
 (defun new-temp-buffer ()
   "Create a new temporary buffer and navigate to it."
   (interactive)
-  (switch-to-buffer (concat "*" (make-temp-name "scratch") "*")))
+  (switch-to-buffer
+   (if (equal current-prefix-arg nil)
+       (concat "*" (make-temp-name "scratch") "*")
+     (minibuffer-with-setup-hook (lambda () (backward-char)) (read-from-minibuffer "Name: " "*scratch-*"))
+     )))
 
 (defun new-temp-org-buffer ()
   "Create a new temporary org-mode buffer and navigate to it."
