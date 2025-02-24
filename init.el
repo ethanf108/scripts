@@ -47,7 +47,7 @@
   (line-number-mode t) ; line number
   (column-number-mode t) ; column number
   (size-indication-mode t) ; where in file
-  :bind ("C-x C-k" . kill-this-buffer)
+  :bind ("C-x C-k" . kill-current-buffer)
   :bind ("C-c n" . new-temp-buffer)
   :bind ("C-c o" . new-temp-org-buffer)
   :bind ("C-x C-S-s" . reopen-as-root)
