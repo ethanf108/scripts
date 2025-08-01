@@ -19,6 +19,8 @@ alias c='echo --color=always' # For quickly adding color to command, just ad `c`
 alias .brc='. ~/.bashrc'
 alias pss='ps aux | grep -i'
 alias cdgr='cd `git rev-parse --show-toplevel`'
+alias bell='echo -e "\a"'
+alias j='echo -j`nproc`'
 
 # Functions
 gsc(){ git clone git@github.com:$1/$2; } # [G]it [S]SH [C]lone
